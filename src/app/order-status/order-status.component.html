@@ -1,0 +1,86 @@
+<div class="row main mx-0 px-0 ">
+  <div class="row mx-0 px-0  upper-ad">
+    <div class="col-12 px-0">
+      <img class="h-100 w-100" src="../../assets/images/upper-ad.png" alt="">
+    </div>
+  </div>
+  <div class="row mx-0 px-0 left-ad">
+    <div class="col-2 px-0 ">
+      <img class="h-100 w-100" src="../../assets/images/left-ad.png" alt="">
+    </div>
+
+
+    <div class="col-10 px-0 customer-order-table border-grey-without-bottom">
+      <div class="row mx-0 px-0 customer-order-table-heading">
+        <div class="col-6 orders-in-queue-heading d-flex justify-content-center align-items-center 
+      border-bottom-grey border-right-grey px-0 py-2">
+          <h2 class="text-orange m-0">Orders in Preparation</h2>
+        </div>
+        <div class="col-6 ready-to-collect-section d-flex justify-content-center align-items-center 
+      border-bottom-grey border-right-grey px-0 py-2">
+          <h2 class="text-green m-0">Ready to collect</h2>
+        </div>
+      </div>
+      <div class="row mx-0 px-0">
+        <div class="col-6 orders-in-queue-data border-right-grey px-0 ">
+          <div class="row mx-0 px-0 w-100">
+            <div *ngIf="listOfProccesingOrders.length > 0">
+              <div *ngFor="let list of listOfProccesingOrders;"
+                   class="order-in-queue-table-bg min-height-4 d-flex justify-content-center align-items-center border-bottom-orange">
+                <h2 class="m-0  text-orange"
+                 *ngIf="list.status === 'processing';else separator">{{list.id}}
+                </h2>
+                <ng-template #separator>
+                <h2  class="m-0 text-orange">-</h2>
+                </ng-template>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row mx-0 px-0">
+            <div
+              class=" orders-in-queue-heading d-flex justify-content-center align-items-center border-bottom-grey px-0 py-2">
+              <h2 class="text-white m-0">Orders in queue</h2>
+            </div>
+            <div *ngIf="listOfWaitingOrders.length > 0">
+              <div *ngFor="let list of listOfWaitingOrders"  class="order-in-queue-table-bg min-height-4 d-flex justify-content-center align-items-center border-bottom-orange">
+               
+                <h2 class="m-0" *ngIf="list.status === 'waiting'; else separator">
+                  {{ list.id}}
+                </h2>
+                  <ng-template #separator>
+                    <h2  class="m-0">-</h2>
+                  </ng-template>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 border-right-grey justify-content-center px-0 ">
+         <div class="row mx-0 px-0 justify-content-center border-bottom-green ready-to-collect-minHeight" *ngIf="listOfCompletedOrders.length>0">
+            <div class="d-flex justify-content-center py-5" *ngFor="let list of listOfCompletedOrders, let i =index">
+              <div *ngIf="list.status === 'completed' && list === lastCompletedOrder">
+                <div class="d-flex justify-content-center">
+                  <h2 class="fw-bold text-white">Hey {{list.username}}!</h2>
+                </div>
+                <div class="d-flex text-light justify-content-center">
+                  <h5>Your order no</h5>
+                </div>
+                <div class="d-flex justify-content-center order-no">
+                  <h1 class="fw-bold text-green heading-font-size">{{list.id}}</h1>
+                </div>
+                <div class="d-flex text-light justify-content-center">
+                  <h5>is ready to collect</h5>
+                </div>
+              </div>
+            </div>
+          </div> 
+
+          <div class="row px-0 mx-0" *ngIf="lastElementExcludedList.length-1>0">
+            <div *ngFor="let list of lastElementExcludedList"
+              class="d-flex ready-to-collect-table-bg align-items-center justify-content-center border-bottom-green min-height-4 ">
+              <h2  *ngIf="list.status === 'completed'">{{list.id}}</h2>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

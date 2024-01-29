@@ -1,0 +1,90 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  --text-white: #f1f1f1;
+  --bg-dark: #0e0e0e;
+  --dark-mode-bg-green: #1B3621;
+  --dark-mode-bg-orange: #22190E;  
+  --text-green: #4bff7b;
+  --text-orange: #ffcc85;
+  --border-grey: #4a4a4a;
+  --border-orange: #af8b5580;
+  --border-green: #7dc5906e;
+}
+.text-orange{
+  color: #ffcc85;
+}
+.text-green{
+  color:#4bff7b;
+}
+.heading-font-size{
+  font-size: 62px;
+}
+.border-bottom-green{
+  border-bottom: 1px solid #7dc5906e;
+}
+.border-right-green{
+  border-right: 1px solid #7dc5906e;
+}
+.border-bottom-orange{
+  border-bottom: 1px solid #af8b5580;
+}
+.border-right-orange{
+  border-right: 1px solid #af8b5580 !important;
+}
+
+@font-face {
+  font-family: DMSans_bold;
+  src: url(/Assets/DM_Sans/static/DMSans-Bold.ttf);
+}
+@font-face {
+  font-family: DMSans_extrabold;
+  src: url(/Assets/DM_Sans/static/DMSans-Black.ttf);
+}
+@font-face {
+  font-family: DMSans_regular;
+  src: url(/Assets/DM_Sans/static/DMSans-Regular.ttf);
+}
+.main{
+  background-color: #0e0e0e;
+  min-height: 100vh;
+
+}
+.order-in-queue-table-bg{
+  background-color: #22190E;
+  color: #fff;
+}
+.ready-to-collect-table-bg{
+  background-color: #1B3621;
+  color: #4bff7b;
+}
+.bg-Black{
+  background-color: #0e0e0e;
+}
+.customer-order-table{
+  box-shadow: -8px 20px 30px #000000c7;
+}
+.min-height-4{
+  min-height: 4rem;
+}
+.border-right-grey{
+  border-right: 1px solid #303030;
+}
+.border-bottom-grey{
+  border-bottom: 1px solid #303030;
+}
+.border-grey-without-bottom{
+  border-top: 1px solid #303030;
+  border-left: 1px solid #303030;
+  border-right: 1px solid #303030;
+}
+
+.col-height{
+  min-height: calc(100vh - 32.1vh);
+}
+.ready-to-collect-minHeight{
+  max-height: 16rem;
+}
