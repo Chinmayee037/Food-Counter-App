@@ -2,18 +2,6 @@
   margin: 0;
   padding: 0;
 }
-
-:root{
-  --text-white: #f1f1f1;
-  --bg-dark: #0e0e0e;
-  --dark-mode-bg-green: #1B3621;
-  --dark-mode-bg-orange: #22190E;  
-  --text-green: #4bff7b;
-  --text-orange: #ffcc85;
-  --border-grey: #4a4a4a;
-  --border-orange: #af8b5580;
-  --border-green: #7dc5906e;
-}
 .text-orange{
   color: #ffcc85;
 }
@@ -36,18 +24,6 @@
   border-right: 1px solid #af8b5580 !important;
 }
 
-@font-face {
-  font-family: DMSans_bold;
-  src: url(/Assets/DM_Sans/static/DMSans-Bold.ttf);
-}
-@font-face {
-  font-family: DMSans_extrabold;
-  src: url(/Assets/DM_Sans/static/DMSans-Black.ttf);
-}
-@font-face {
-  font-family: DMSans_regular;
-  src: url(/Assets/DM_Sans/static/DMSans-Regular.ttf);
-}
 .main{
   background-color: #0e0e0e;
   min-height: 100vh;
