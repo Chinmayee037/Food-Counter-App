@@ -52,6 +52,7 @@ export class OrderStatusComponent implements OnInit {
 
       })
     );
+    
   }
 
   proccessOneByOne(){
