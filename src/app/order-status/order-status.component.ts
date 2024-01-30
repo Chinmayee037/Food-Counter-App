@@ -35,7 +35,7 @@ export class OrderStatusComponent implements OnInit {
     
         
         this.listOfOriginalOrders = data;
-        console.log('JSON DATA' , this.listOfOriginalOrders);
+        console.log('listOfOriginalOrders' , this.listOfOriginalOrders);
         this.proccessOneByOne();
       },
       (error) => {
@@ -48,7 +48,6 @@ export class OrderStatusComponent implements OnInit {
       switchMap((index) => {
         this.listOfOriginalOrders[index].status = OrderStatus.Waiting;
         this.listOfWaitingOrders.push(this.listOfOriginalOrders[index]);
-        console.log('listOfWaitingOrders' , this.listOfWaitingOrders);
         return of({ data: this.listOfOriginalOrders[index], index });
 
       })
