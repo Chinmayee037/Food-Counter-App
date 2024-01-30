@@ -7,7 +7,6 @@ import { Observable } from 'rxjs';
 })
 export class CustomersService {
 url = 'assets/data/db.json';
-// url = 'https://chinmayee037.github.io/Json-Data/db.json';
 
   constructor(public http: HttpClient) { }
 
