@@ -32,6 +32,8 @@ export class OrderStatusComponent implements OnInit {
   getAllOrderDet() {
     this.service.getAllCustomer().subscribe(
       (data) => {
+        console.log('JSON DATA' , data);
+        
         this.listOfOriginalOrders = data;
         this.proccessOneByOne();
       },
@@ -45,7 +47,9 @@ export class OrderStatusComponent implements OnInit {
       switchMap((index) => {
         this.listOfOriginalOrders[index].status = OrderStatus.Waiting;
         this.listOfWaitingOrders.push(this.listOfOriginalOrders[index]);
+        console.log('listOfWaitingOrders' , this.listOfWaitingOrders);
         return of({ data: this.listOfOriginalOrders[index], index });
+
       })
     );
   }
@@ -62,6 +66,7 @@ export class OrderStatusComponent implements OnInit {
   }
  
   startOrderPlacing(orderProcessed: { data: any; ind: any }) {
+    console.log(orderProcessed,'orderProcessed')
     timer(
       this.ordProccessingInterval,
       this.ordProccessingInterval * this.listOfOriginalOrders.length + 1
@@ -77,6 +82,7 @@ export class OrderStatusComponent implements OnInit {
   }
 
   completeOrders(orderTobeCompleted: { data: any; ind: any; }) {
+    console.log(orderTobeCompleted, 'orderTobeCompleted')
     timer(this.ordCompleteInterval, this.ordCompleteInterval * this.listOfOriginalOrders.length + 1)
       .pipe(
         take(1),

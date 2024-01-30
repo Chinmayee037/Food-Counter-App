@@ -6,7 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CustomersService {
-url = 'http://localhost:3000/users';
+// url = 'http://localhost:3000/users';
+url = 'https://chinmayee037.github.io/Json-Data/db.json';
+
   constructor(public http: HttpClient) { }
 
   getAllCustomer(): Observable<any[]> {
