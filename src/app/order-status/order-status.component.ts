@@ -32,10 +32,7 @@ export class OrderStatusComponent implements OnInit {
   getAllOrderDet() {
     this.service.getAllCustomer().subscribe(
       (data) => {
-    
-        
-        this.listOfOriginalOrders = data;
-        console.log('listOfOriginalOrders' , this.listOfOriginalOrders);
+        this.listOfOriginalOrders = data.users;
         this.proccessOneByOne();
       },
       (error) => {
@@ -52,7 +49,7 @@ export class OrderStatusComponent implements OnInit {
 
       })
     );
-    
+
   }
 
   proccessOneByOne(){
@@ -61,14 +58,12 @@ export class OrderStatusComponent implements OnInit {
       take(this.listOfOriginalOrders.length),
       switchMap((ind) => this.orderInQueue(ind))
     ).subscribe((orderProcessed) => {
-      console.log(orderProcessed,'orderProcessed')
       this.startOrderPlacing(orderProcessed);
       this.completeOrders(orderProcessed);
     });
   }
  
   startOrderPlacing(orderProcessed: { data: any; ind: any }) {
-    console.log(orderProcessed,'orderProcessed')
     timer(
       this.ordProccessingInterval,
       this.ordProccessingInterval * this.listOfOriginalOrders.length + 1
@@ -84,7 +79,6 @@ export class OrderStatusComponent implements OnInit {
   }
 
   completeOrders(orderTobeCompleted: { data: any; ind: any; }) {
-    console.log(orderTobeCompleted, 'orderTobeCompleted')
     timer(this.ordCompleteInterval, this.ordCompleteInterval * this.listOfOriginalOrders.length + 1)
       .pipe(
         take(1),
