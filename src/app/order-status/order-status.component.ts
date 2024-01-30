@@ -32,9 +32,10 @@ export class OrderStatusComponent implements OnInit {
   getAllOrderDet() {
     this.service.getAllCustomer().subscribe(
       (data) => {
-        console.log('JSON DATA' , data);
+    
         
         this.listOfOriginalOrders = data;
+        console.log('JSON DATA' , this.listOfOriginalOrders);
         this.proccessOneByOne();
       },
       (error) => {
@@ -60,6 +61,7 @@ export class OrderStatusComponent implements OnInit {
       take(this.listOfOriginalOrders.length),
       switchMap((ind) => this.orderInQueue(ind))
     ).subscribe((orderProcessed) => {
+      console.log(orderProcessed,'orderProcessed')
       this.startOrderPlacing(orderProcessed);
       this.completeOrders(orderProcessed);
     });
