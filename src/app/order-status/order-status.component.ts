@@ -17,9 +17,9 @@ export class OrderStatusComponent implements OnInit {
   listOfOriginalOrders: any[]=[];
   listOfProccesingOrders: any[] = [];
   listOfCompletedOrders: any[] = [];
-  ordProccessingInterval = 4000;
-  ordCompleteInterval = 5500;
-  ordWaitingInterval = 2500;
+  ordProccessingInterval = 3000;
+  ordCompleteInterval = 5000;
+  ordWaitingInterval = 3000;
 
   lastElementExcludedList: any[] = [];
   lastCompletedOrder:any;
@@ -53,7 +53,7 @@ export class OrderStatusComponent implements OnInit {
   }
 
   proccessOneByOne(){
-    timer(1000, this.listOfOriginalOrders.length + 1 * this.ordWaitingInterval)
+    timer(3000, this.listOfOriginalOrders.length + 1 * this.ordWaitingInterval)
     .pipe(
       take(this.listOfOriginalOrders.length),
       switchMap((ind) => this.orderInQueue(ind))
@@ -87,9 +87,11 @@ export class OrderStatusComponent implements OnInit {
           this.listOfCompletedOrders.unshift(orderTobeCompleted.data);
 
           // this.lastElementExcludedList = [...this.listOfCompletedOrders];
+       
           this.lastElementExcludedList = this.listOfCompletedOrders.slice(1);
           this.lastCompletedOrder = this.listOfCompletedOrders[0];   
           
+        
         })
       )
       .subscribe()

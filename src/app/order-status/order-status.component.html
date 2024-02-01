@@ -75,7 +75,7 @@
             </div>
           </div> 
 
-          <div class="row px-0 mx-0" *ngIf="lastElementExcludedList.length-1>0">
+          <div class="row px-0 mx-0" *ngIf="lastElementExcludedList.length>0">
             <div *ngFor="let list of lastElementExcludedList"
               class="d-flex ready-to-collect-table-bg align-items-center justify-content-center border-bottom-green min-height-4 ">
               <h2  *ngIf="list.status === 'completed'">{{list.id}}</h2>
