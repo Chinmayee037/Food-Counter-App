@@ -64,3 +64,69 @@
 .ready-to-collect-minHeight{
   max-height: 16rem;
 }
+
+
+
+.stall-bg-orange{
+  background-color: #2C2317;
+  color: white;
+}
+.stall-bg-green{
+  background-color: #0E130F;
+  color: white;
+}
+.gradient-border-right{
+  border: none;
+  border-right: 1px solid;
+  border-image: linear-gradient(
+      180deg,
+      rgba(122, 103, 78, 0) 0%,
+      rgb(122, 103, 78) 50%,  
+      rgba(122, 103, 78, 0.01) 100%
+  );
+  border-image-slice: 1;
+}
+.gradient-border-right-green{
+  border: none;
+  border-right: 1px solid;
+  border-image: linear-gradient(
+      180deg,
+      rgba(108, 186, 131, 0) 0%,
+      rgb(110, 163, 126) 50%,  
+      rgba(108, 186, 131, 0) 100%
+  );
+  border-image-slice: 1;
+}
+.gradient-border-bottom{
+  border: none;
+  border-bottom: 1px solid;
+  border-image: linear-gradient(
+      90deg,
+      rgba(122, 103, 78, 0.075) 0%,
+      rgb(122, 103, 78) 50%,  
+      rgba(122, 103, 78, 0.075) 100%
+  );
+  border-image-slice: 1;
+}
+.gradient-border-top-right{
+  border: none;
+  border-bottom: 1px solid;
+  border-image: linear-gradient(
+      90deg,
+      rgba(122, 103, 78, 0.075) 0%,
+      rgb(110, 163, 126) 50%, 
+      rgba(122, 103, 78, 0.075) 100%
+  );
+  border-image-slice: 1;
+}
+.py-11{
+  padding: 10px 0;
+}
+.py-8{
+  padding: 8px 0;
+ 
+}
+
+.border-top-green{
+  border-top: 1px solid #7dc5906e;
+}
