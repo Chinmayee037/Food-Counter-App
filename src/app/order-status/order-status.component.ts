@@ -86,6 +86,8 @@ export class OrderStatusComponent implements OnInit {
           console.log("listOfCompletedOrders" , this.listOfCompletedOrders);
           this.lastElementExcludedList = this.listOfCompletedOrders.slice(1);
           this.lastCompletedOrder = this.listOfCompletedOrders[0];   
+          console.log("lastElementExcludedList" , this.lastElementExcludedList);
+          
           
         
         })

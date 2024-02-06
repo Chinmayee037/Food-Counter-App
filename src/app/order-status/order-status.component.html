@@ -148,11 +148,30 @@
                   </div>
                 </div>
           </ng-container>
-          <div class="row">
-            <div *ngIf="lastElementExcludedList.length>0">
+          <div class="row ready-to-collect-table-bg border-bottom-green d-flex align-items-center" *ngFor="let list of lastElementExcludedList">
+            <!-- <div *ngIf="lastElementExcludedList.length>0">
               <div *ngFor="let list of lastElementExcludedList"
                 class="d-flex ready-to-collect-table-bg align-items-center justify-content-center border-bottom-green py-8">
                 <h3 class="m-0" *ngIf="list.status === 'completed'">{{list.orderNo}}</h3>
+              </div>
+            </div> -->
+            <div class="col-5">
+              <div *ngIf="lastElementExcludedList.length>0">
+                <div 
+                  class="d-flex align-items-center justify-content-center py-8">
+                  <h2 class="m-0" *ngIf="list.status === 'completed'">
+                    {{list.orderNo}}</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-7">
+              <div class="col-12 d-flex py-8" *ngIf="lastElementExcludedList.length>0">
+                <div class="col-auto justify-content-between" *ngFor="let i of list.stall">
+                  <h5 class="m-0 text-white" *ngIf="list.status === 'completed'">
+                  
+                    {{i.stallNo}} <span class="mx-2" *ngIf="list.stall[0].stallNo == i.stallNo">|</span>
+                   </h5>
+                </div>
               </div>
             </div>
           </div>
