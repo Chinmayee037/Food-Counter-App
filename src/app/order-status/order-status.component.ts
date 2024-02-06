@@ -51,7 +51,7 @@ export class OrderStatusComponent implements OnInit {
   }
 
   proccessOneByOne(){
-    timer(5000, this.listOfOriginalOrders.length + 1 * this.ordWaitingInterval)
+    timer(2000, this.listOfOriginalOrders.length + 1 * this.ordWaitingInterval)
     .pipe(
       take(this.listOfOriginalOrders.length),
       switchMap((ind) => this.orderInQueue(ind))
